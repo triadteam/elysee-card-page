@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+:root {
+    --blue: 18, 42, 95;
+    --aqua: 31, 158, 237;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(var(--blue));
+}
+
+.title {
+    color: rgb(var(--blue));
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.logoContainer::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 200px;
+    background-color: rgba(var(--aqua), .3);
+    z-index: -1;
+}
+
+.logoContainer .imageContainer {
+    text-align: center;
+}
+
+.logoContainer img {
+    width: 120px;
+}
+
+.userCard {
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.507);
+}
+
+.userCard .overlay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: url(./assets/images/overlay.png);
+    background-size: cover;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.userCard .overlay .userImage {
+    width: 300px;
+    height: 100%;
+    background:url(./assets/images/user.jpeg);
+    background-size: cover;
+    border-radius: 15px 100px 100px 15px;
+    flex: 1;
+    margin-right: 15px;
+}
+
+.userCard .overlay .userData {
+    flex: 2;
+    font-size: 25px;
+}
+
+.userCard .overlay .userData .title {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .8);
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0;
+    justify-content: space-evenly;
+}
+
+.buttonsContainer a {
+    padding: 10px 20px;
+    border: 2px solid rgb(var(--blue));
+    border-radius: 10px;
+}
+
+.buttonsContainer .enquiries {
+    background-color: rgb(var(--blue));
+    color: white;
+}
+
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.aboutContainer .title {
+    color: rgb(var(--blue));
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.socialMediaContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.socialMediaContainer .title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.socialMediaContainer .title span {
+    color: rgb(var(--blue));
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.socialMediaContainer .title a{
+    font-size: 18px;
+}
+
+.socialMediaContainer .icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialMediaContainer .icons a {
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 2px rgb(211, 210, 210);
+}
+
+.locationsContainer {
+    margin-bottom: 25px;
+}
+
+.locationsContainer .locations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.locationsContainer .singleLocation {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.locationsContainer .singleLocation .fas {
+    margin-right: 15px
+}
+
+.otherContainer .smallCard,
+.otherContainer .youtubeFrame,
+.otherContainer .shareButton{
+    text-align: center;
+}
+
+.otherContainer .smallCard img{
+    width: 50%;
+    margin-bottom: 15px;
+}
+
+.otherContainer .youtubeFrame iframe {
+    width: 50%;
+}
+
+.shareButton {
+    margin: 30px auto;
+}
+
+.shareButton a {
+    width: 30%;
+    background-color: rgb(var(--blue));
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+.shareButton i {
+    margin-left: 10px;
+}
+
+.footer {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.getYourCard {
+    position: fixed;
+    width: 50%;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    text-align: center;
+    background-color: rgb(var(--aqua));
+    padding: 10px 0;
+    color: white;
+}
+
+
+@media (min-width: 1500px) {
+    body {
+        width: 800px;
+    }
+
+    .logoContainer::before {
+        width: 800px;
+    }
+
+    .getYourCard {
+        width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        width: 70%;
+    }
+
+    .logoContainer::before {
+        width: 70%;
+    }
+
+    .getYourCard {
+        width: 70%;
+    }
+
+    .socialMediaContainer .icons a i {
+        font-size: 18px;
+    }
+
+    .locationsContainer .singleLocation .fas {
+        font-size: 17px;
+    }
+
+    .otherContainer .smallCard img{
+        width: 70%;
+    }
+
+    .otherContainer .youtubeFrame iframe {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        width: 90%;
+    }
+
+    .logoContainer::before {
+        width: 90%;
+    }
+
+    .getYourCard {
+        width: 90%;
+    }
+
+    .logoContainer img {
+        width: 80px;
+    }
+
+    .logoContainer{
+        position:absolute;
+        width: 111%;
+        top: 0;
+        left: 0;
+    }
+
+    .userCard {
+        margin-top: 30%;
+    }
+
+    .userCard .overlay {
+        height: 150px;
+        border-radius: 10px;
+    }
+
+    .userCard .overlay .userImage {
+        flex: 2;
+    }
+
+    .userCard .overlay .userData {
+        font-size: 18px;
+    }
+
+    .userCard .overlay .userData .title {
+        font-size: 10px;
+    }
+
+    .buttonsContainer {
+        justify-content: space-between;
+    }
+
+    .buttonsContainer a {
+        padding: 5px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .locationsContainer .singleLocation p {
+        font-size: 15px;
+    }
+
+    .otherContainer .smallCard img {
+        width: 100%;
+    }
+
+    .otherContainer .youtubeFrame iframe {
+        width: 100%;
+    }
+
+    .shareButton {
+        font-family: 400;
+    }
+}

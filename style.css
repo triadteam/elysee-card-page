@@ -118,14 +118,18 @@ a {
 .buttonsContainer {
     display: flex;
     flex-direction: row;
-    margin: 30px 0;
-    justify-content: space-evenly;
+    margin: 50px 0 40px;
+    justify-content: center;
+}
+
+.buttonsContainer .saveContact {
+    margin-right: 30px;
 }
 
 .buttonsContainer a {
-    padding: 10px 20px;
+    padding: 5px 20px;
     border: 2px solid rgb(var(--blue));
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .buttonsContainer .enquiries {
@@ -136,7 +140,7 @@ a {
 .aboutContainer {
     display: flex;
     flex-direction: column;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 
 .aboutContainer .title {
@@ -149,7 +153,7 @@ a {
 .socialMediaContainer {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .socialMediaContainer .title {
@@ -187,7 +191,7 @@ a {
 }
 
 .locationsContainer {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 
 .locationsContainer .locations {
@@ -227,7 +231,7 @@ a {
 }
 
 .shareButton {
-    margin: 30px auto 25px;
+    margin: 50px auto 25px;
 }
 
 .shareButton a {
@@ -341,7 +345,7 @@ a {
     }
 
     .userCard .overlay {
-        height: 150px;
+        height: 200px;
         border-radius: 10px;
     }
 
@@ -357,12 +361,8 @@ a {
         font-size: 10px;
     }
 
-    .buttonsContainer {
-        justify-content: space-between;
-    }
-
     .buttonsContainer a {
-        padding: 5px 15px;
+        padding: 5px 10px;
         border-radius: 5px;
         font-size: 14px;
     }
@@ -385,5 +385,12 @@ a {
 
     .getYourCard {
         width: 100%;
+    }
+}
+
+@media (max-width: 350px) {
+    .userCard .overlay {
+        height: 150px;
+        border-radius: 10px;
     }
 }

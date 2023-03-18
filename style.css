@@ -12,6 +12,7 @@
 
 body {
     width: 50%;
+    min-width: 280px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -79,7 +80,7 @@ a {
     background-color: black;
     color: white;
     border-radius: 15px;
-    width: 95%;
+    width: 350px;
     margin: 0 auto;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.507);
 }
@@ -90,7 +91,7 @@ a {
     align-items: center;
     background: url(./assets/images/overlay.png);
     background-size: cover;
-    height: 200px;
+    height: 180px;
     border-radius: 15px;
 }
 
@@ -160,6 +161,33 @@ a {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+}
+
+.socialMediaContainer .title a {
+    position: relative;
+    color: black;
+    font-size: 13px;
+}
+
+.socialMediaContainer .title a::after {
+    content: 'Scroll left';
+    position: absolute;
+    margin-right: 20px;
+    top: -10px;
+    width: fit-content;
+    white-space: nowrap;
+    background-color: rgb(255, 255, 255);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 3px;
+    z-index: 6;
+    right: 0;
+    box-shadow: 0 0 8px rgb(211, 211, 211);
+    display: none;
+}
+.socialMediaContainer .title a:hover::after {
+    display: inline-block;
 }
 
 .socialMediaContainer .title span {
@@ -285,10 +313,27 @@ a {
 
     .logoContainer::before {
         width: 70%;
+        height: 180px;
     }
 
     .getYourCard {
         width: 70%;
+    }
+
+    .userCard .overlay .userData {
+        font-size: 18px;
+    }
+
+    .userCard .overlay .userData .title {
+        font-size: 10px;
+    }
+
+    .userCard {
+        width: 300px;
+    }
+
+    .userCard .overlay {
+        height: 150px;
     }
 
     .socialMediaContainer .icons a i {
@@ -313,10 +358,6 @@ a {
         width: 90%;
     }
 
-    .logoContainer::before {
-        width: 90%;
-    }
-
     .getYourCard {
         width: 90%;
     }
@@ -332,16 +373,16 @@ a {
         left: 0;
         overflow-x: hidden;
         overflow-y: visible;
-        min-height: 150px;
+        min-height: 200px;
     }
 
     .logoContainer::before {
         width: 100%;
-        height: 150px;
+        height: 180px;
     }
 
     .userCard {
-        margin-top: 30%;
+        margin-top: 80px;
     }
 
     .userCard .overlay {
@@ -389,6 +430,18 @@ a {
 }
 
 @media (max-width: 350px) {
+    .logoContainer::before {
+        height: 160px;
+    }
+
+    .userCard .overlay .userData .title {
+        font-size: 10px;
+    }
+
+    .userCard {
+        width: 90%;
+    }
+
     .userCard .overlay {
         height: 150px;
         border-radius: 10px;

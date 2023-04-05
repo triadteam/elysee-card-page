@@ -5,9 +5,13 @@
     --aqua: 31, 158, 237;
 }
 
-*, html, body{
+* {
     margin: 0;
     padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 body {
@@ -17,7 +21,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    overflow-x: hidden;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -27,6 +30,17 @@ body {
 
 .socialMediaContainer .icons::-webkit-scrollbar {
     height: 8px;
+}
+
+.btn {
+    background-color: rgb(var(--blue));
+    color: white;
+    padding: .2rem .8rem;
+    border-radius: 5px;
+}
+
+a.underline {
+    text-decoration: underline;
 }
 
 /* Track */
@@ -51,13 +65,24 @@ a {
     color: rgb(var(--blue));
 }
 
-.title {
+.aboutContainer,
+.socialMediaContainer,
+.addressContainer,
+.otherContainer {
+    padding: 0 .5rem;
+}
+
+
+.heading {
     color: rgb(var(--blue));
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
+.logoContainer {
+    min-width: 280px;
+}
 .logoContainer::before{
     content: "";
     position: absolute;
@@ -86,34 +111,45 @@ a {
 }
 
 .userCard .overlay {
-    display: flex;
+    position: relative;
+    /* display: flex;
     flex-direction: row;
-    align-items: center;
-    background: url(./assets/images/overlay.png);
+    align-items: center; */
+    /* background: url(./assets/images/overlay.png); */
     background-size: cover;
     height: 180px;
     border-radius: 15px;
 }
 
 .userCard .overlay .userImage {
-    width: 300px;
-    height: 100%;
+    position: absolute;
+    width: 90px;
+    height: 90px;
     background:url(./assets/images/user.jpeg);
     background-size: cover;
-    border-radius: 15px 100px 100px 15px;
-    flex: 1;
-    margin-right: 15px;
+    border-radius: 50%;
+    border: 2px solid rgb(82, 186, 255);
+    top: 60%;
+    left: 37%;
+    /* transform: translate(100%, 90%); */
 }
 
-.userCard .overlay .userData {
-    flex: 2;
-    font-size: 25px;
+
+
+.userData {
+    text-align: center;
+    margin-top: 2.2rem;
+}
+ .userData .names {
+    color: rgb(var(--blue));
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
-.userCard .overlay .userData .title {
+.userData .title {
+    color: rgb(0, 0, 0);
     font-size: 15px;
     font-weight: 400;
-    color: rgba(255, 255, 255, .8);
 }
 
 .buttonsContainer {
@@ -208,6 +244,10 @@ a {
     overflow-x: scroll;
 }
 
+.socialMediaContainer .icons a:first-child {
+    margin-left: 0;
+}
+
 .socialMediaContainer .icons a {
     padding: 10px 15px;
     margin-left: 15px;
@@ -219,25 +259,32 @@ a {
     font-size: 28px;
 }
 
-.locationsContainer {
+/* ========================================== */
+/*                    ADDRESS                 */
+/* ========================================== */
+
+.addressContainer {
     margin-bottom: 50px;
 }
 
-.locationsContainer .locations {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+table {
+    border-collapse: separate;
+    border-spacing: 0 1rem;
 }
 
-.locationsContainer .singleLocation {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
+table tr td {
+    width: 50%;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ccc;
 }
 
-.locationsContainer .singleLocation .fas {
-    margin-right: 15px
+@media (max-width: 349px) {
+    table tr td {
+        font-size: .85rem;
+    }
+    
 }
+
 
 .otherContainer .smallCard,
 .otherContainer .youtubeFrame,
@@ -341,10 +388,6 @@ a {
         font-size: 18px;
     }
 
-    .locationsContainer .singleLocation .fas {
-        font-size: 17px;
-    }
-
     .otherContainer .smallCard img{
         width: 70%;
     }
@@ -387,7 +430,6 @@ a {
     }
 
     .userCard .overlay {
-        height: 200px;
         border-radius: 10px;
     }
 
@@ -407,10 +449,6 @@ a {
         padding: 5px 10px;
         border-radius: 5px;
         font-size: 14px;
-    }
-
-    .locationsContainer .singleLocation p {
-        font-size: 15px;
     }
 
     .otherContainer .smallCard img {
